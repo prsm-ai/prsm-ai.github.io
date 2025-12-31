@@ -48,7 +48,7 @@ const problemPrsmWay = [
 const featureCards = [
   {
     id: 'scheduling',
-    title: 'Effortless Scheduling2',
+    title: 'Effortless Scheduling 2',
     subtitle: 'Let prsm handle the back-and-forth',
     bullets: [
       'Propose meeting times instantly based on preferences and availability',
