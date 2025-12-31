@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-hidden="true">
+  <g fill="none" stroke="#8fa0b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="16" y="22" width="72" height="72" rx="12" />
+    <line x1="16" y1="40" x2="88" y2="40" />
+    <line x1="36" y1="16" x2="36" y2="30" />
+    <line x1="68" y1="16" x2="68" y2="30" />
+    <circle cx="88" cy="78" r="20" />
+    <path d="M88 66v12l10 6" />
+  </g>
+</svg>
