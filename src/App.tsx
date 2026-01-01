@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 type CTA = {
   label: string;
   href: string;
@@ -127,6 +129,44 @@ function SectionTitle({ label, headline, description }: { label?: string; headli
 }
 
 function App() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleWaitlistSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const now = new Date();
+    const pad = (value: number) => value.toString().padStart(2, '0');
+    const timestamp = `${pad(now.getMonth() + 1)}/${pad(now.getDate())}/${now.getFullYear()} ${now.getHours()}:${pad(
+      now.getMinutes(),
+    )}:${pad(now.getSeconds())}`;
+    const timestampInput = form.querySelector<HTMLInputElement>('input[name="timestamp"]');
+    if (timestampInput) {
+      timestampInput.value = timestamp;
+    }
+    const formData = new FormData(form);
+
+    try {
+      setFormStatus('submitting');
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      });
+
+      if (response && response.type !== 'opaque') {
+        if (!response.ok) {
+          throw new Error('Submission failed');
+        }
+      }
+
+      form.reset();
+      setFormStatus('success');
+    } catch (error) {
+      setFormStatus('error');
+    }
+  };
+
   return (
     <>
       <header>
@@ -315,6 +355,7 @@ function App() {
               aria-label="Beta waitlist form"
               method="post"
               action="https://hooks.zapier.com/hooks/catch/25891585/uwdl65q/"
+              onSubmit={handleWaitlistSubmit}
             >
               <label htmlFor="email">Email</label>
               <input
@@ -325,10 +366,26 @@ function App() {
                 autoComplete="email"
                 required
               />
+              <input type="hidden" name="timestamp" />
               <span className="microcopy">We only use your email for beta onboarding updates.</span>
-              <button type="submit" className="button primary" aria-label="Submit your early access request">
-                Request early access
+              <button
+                type="submit"
+                className="button primary"
+                aria-label="Submit your early access request"
+                disabled={formStatus === 'submitting'}
+              >
+                {formStatus === 'submitting' ? 'Submitting…' : 'Request early access'}
               </button>
+              {formStatus === 'success' ? (
+                <span className="microcopy" role="status">
+                  Thanks! You're on the list.
+                </span>
+              ) : null}
+              {formStatus === 'error' ? (
+                <span className="microcopy" role="status">
+                  Something went wrong. Please try again.
+                </span>
+              ) : null}
             </form>
           </div>
         </section>
