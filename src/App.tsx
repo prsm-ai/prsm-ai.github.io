@@ -310,7 +310,12 @@ function App() {
                 <CTAButton {...primaryCTA} label="Early access / TestFlight" ariaLabel="Request early access to prsm TestFlight" />
               </div>
             </div>
-            <form className="form" aria-label="Beta waitlist form">
+            <form
+              className="form"
+              aria-label="Beta waitlist form"
+              method="post"
+              action="https://hooks.zapier.com/hooks/catch/25891585/uwdl65q/"
+            >
               <label htmlFor="email">Email</label>
               <input
                 id="email"
@@ -320,7 +325,7 @@ function App() {
                 autoComplete="email"
                 required
               />
-              <span className="microcopy">We'll only email about the beta launch and onboarding.</span>
+              <span className="microcopy">We only use your email for beta onboarding updates.</span>
               <button type="submit" className="button primary" aria-label="Submit your early access request">
                 Request early access
               </button>
