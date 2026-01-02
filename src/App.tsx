@@ -199,10 +199,10 @@ function App() {
               </div>
               <div className="cta-row" role="group" aria-label="Primary calls to action">
                 <CTAButton {...primaryCTA} />
-                <CTAButton {...secondaryCTA} />
+                {/* <CTAButton {...secondaryCTA} /> */}
               </div>
             </div>
-            <div className="hero-visual" aria-hidden="true">
+            {/* <div className="hero-visual" aria-hidden="true">
               <figure className="mockup-card" role="group" aria-label="Scheduling card mockup">
                 <div className="card-header">
                   <div>
@@ -255,7 +255,7 @@ function App() {
                   </div>
                 </div>
               </figure>
-            </div>
+            </div> */}
           </div>
         </section>
 
