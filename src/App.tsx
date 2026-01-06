@@ -35,6 +35,7 @@ const heroHeadlineOptions = [
 const problemOldWay = [
   '7+ emails just to find a time',
   'Double-bookings and timezone headaches',
+  'No histroical context about your relationship',
   'Lost context about why you’re meeting',
   'No-shows and zero preparation',
 ];
@@ -42,6 +43,7 @@ const problemOldWay = [
 const problemPrsmWay = [
   'One sentence. Done. 30 seconds of your time.',
   'Smart conflict detection & alternatives',
+  'An assistant that learns your preferences',
   'Context-aware briefs & agendas',
   'Intelligent follow-ups & reminders',
   'Make time for the people who matter most',
@@ -192,9 +194,9 @@ function App() {
               We built prsm to handle the logistics of your network so you can focus on building stronger relationships.
               </p>
               <div className="hero-badges" role="list" aria-label="Key differentiators">
-                <span className="hero-badge">Effortless scheduling & conflict resolution</span>
-                <span className="hero-badge">Google calendar integration</span>
-                <span className="hero-badge">Context-aware meeting preparation</span>
+                <span className="hero-badge">Fully autonomous scheduling & conflict resolution</span>
+                <span className="hero-badge">Calendar integration</span>
+                <span className="hero-badge">Context driven meeting briefs</span>
                 <span className="hero-badge">Intelligent follow-ups & reminders</span>
               </div>
               <div className="cta-row" role="group" aria-label="Primary calls to action">
