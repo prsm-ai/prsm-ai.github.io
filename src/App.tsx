@@ -132,6 +132,7 @@ function SectionTitle({ label, headline, description }: { label?: string; headli
 
 function App() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const handleWaitlistSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -177,11 +178,25 @@ function App() {
             <strong>prsm</strong>
           </a>
           <div className="nav-links" aria-label="Section navigation">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How it works</a>
-            <a href="#beta">Early access</a>
-            <CTAButton {...primaryCTA} />
+            <div id="primary-navigation" className={`nav-menu ${isNavOpen ? 'open' : ''}`}>
+              <a href="#features">Features</a>
+              <a href="#how-it-works">How it works</a>
+              <a href="#beta">Early access</a>
+              <CTAButton {...primaryCTA} />
+            </div>
           </div>
+          <button
+            type="button"
+            className="nav-toggle"
+            aria-label={isNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isNavOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setIsNavOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </nav>
       </header>
       <main id="top">
