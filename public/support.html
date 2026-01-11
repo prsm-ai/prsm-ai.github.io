@@ -186,10 +186,19 @@
         form.querySelector('input[name="timestamp"]').value = timestamp;
 
         try {
+          const payload = {
+            name: form.querySelector('#name').value,
+            email: form.querySelector('#email').value,
+            type: form.querySelector('#type').value,
+            message: form.querySelector('#message').value,
+          };
           await fetch(form.action, {
             method: 'POST',
-            body: new FormData(form),
+            body: JSON.stringify(payload),
             mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+            },
           });
           form.reset();
           status.textContent = 'Thanks! Your message has been sent.';
