@@ -29,7 +29,6 @@ const secondaryCTA: CTA = {
 
 const heroHeadlineOptions = [
   'Schedule smarter. Nurture every relationship.',
-  'Your AI chief of staff for meetings and follow-through.',
 ];
 
 const problemOldWay = [
@@ -182,6 +181,7 @@ function App() {
               <a href="#features">Features</a>
               <a href="#how-it-works">How it works</a>
               <a href="#beta">Early access</a>
+              <a href="/support.html">Support</a>
               <CTAButton {...primaryCTA} />
             </div>
           </div>
@@ -355,6 +355,16 @@ function App() {
           </div>
         </section>
 
+        <section className="section" id="who-its-for" aria-label="Who it's for">
+          <div className="container">
+            <SectionTitle
+              label="Who it's for"
+              headline="Built for people who manage a lot of relationships."
+              description="Created by people who manage a lot of relationships, prsm is for professionals, leaders, and connectors who juggle many meetings and want to be more thoughtful without adding mental overhead."
+            />
+          </div>
+        </section>
+
         <section className="section" id="beta" aria-label="Beta waitlist">
           <div className="container final-cta">
             <div>
@@ -363,9 +373,9 @@ function App() {
               <p>
                 Get early access, share feedback, and help shape the future of scheduling and relationship management.
               </p>
-              <div className="cta-row">
+              {/* <div className="cta-row">
                 <CTAButton {...primaryCTA} label="Early access / TestFlight" ariaLabel="Request early access to prsm TestFlight" />
-              </div>
+              </div> */}
             </div>
             <form
               className="form"
