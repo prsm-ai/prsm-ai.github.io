@@ -34,7 +34,7 @@ const heroHeadlineOptions = [
 const problemOldWay = [
   '7+ emails just to find a time',
   'Double-bookings and timezone headaches',
-  'No histroical context about your relationship',
+  'No historical context about your relationship',
   'Lost context about why you’re meeting',
   'No-shows and zero preparation',
 ];
