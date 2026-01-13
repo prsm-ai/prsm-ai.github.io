@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc && vite build && npm run prerender",
+    "preview": "vite preview",
+    "prerender": "node scripts/prerender.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -17,10 +18,10 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.16",
+    "baseline-browser-mapping": "^2.9.14",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.3.3",
-    "vite": "^5.4.0",
-    "vite-prerender-plugin": "^0.5.12"
+    "vite": "^7.3.1"
   }
 }
